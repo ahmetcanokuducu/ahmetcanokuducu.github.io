@@ -1,0 +1,208 @@
+body{
+  font-family: "Poppins", sans-serif;
+  background-color: #0b0b0f;
+  color: #eaeaf0;
+}
+
+
+
+header{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(45deg, #0b0b0f 0%, #1c0131 100%);
+}
+
+nav{
+  display: flex; /*nav içindeki elemanları yan yana dizmek için flex kullanıyoruz*/
+  align-items: center; /*dikeyde ortalamak için*/
+  padding: 10px 10px; 
+  gap: 14px; /*elemanlar arasındaki boşluk*/
+  position: relative; /* hamburger menü için */
+  
+}
+
+nav ul{
+  list-style: none; /*noktaları kaldırmak için */
+  margin: 0; /*bu elemanla diğer eleman arasındaki boşluk */ 
+  padding: 0; /*iç boşluk*/
+  display: flex; /*yan yana dizmek için flex kullanıyoruz*/
+  gap: 14px; /*elemanlar arasındaki boşluk*/
+  margin-left: auto; /* menüyü sağa yasla */
+}
+
+nav ul a {
+  text-decoration: none;      /* alt çizgi yok */
+  padding: 6px 12px;          /* kapsül boşluğu */
+  border-radius: 999px;       /* pill */
+  display: inline-block;      /* buton gibi kutu olsun */
+  font-weight: 370;              /* yazı kalınlığı */
+  color: #a855f7;             /* kapalı lila (yazı) */
+  border: 2.2px solid #a855f7;  /* kapalı lila (çerçeve) */
+  background: transparent;    /* içi boş */
+
+  transition: 300ms;          /* hover geçişi yumuşak */
+}
+
+nav ul a:hover{
+  background: linear-gradient(90deg, #6d28d9, #a855f7);
+  border-color: transparent;   /* istersen çerçeve kaybolsun */
+  color: white;                /* gradient üstünde okunur */
+  transform: translateY(-2px);
+}
+
+nav > a{
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 22px;
+  padding-left: 20px;
+  background: linear-gradient(90deg, #6d28d9, #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#menuBtn{
+  margin-left: auto; /* sağa yasla */
+  display: none;
+  background: transparent; /* buton arka planını şeffaf yapar*/
+  border: 0;          /* buton kenarlığını kaldırır*/
+  color: #a855f7;   
+  font-size: 26px;
+  cursor: pointer; /* fare imlecini el simgesi yapar */
+}
+
+@media (max-width: 768px){
+  nav ul{
+    display: none;   /* menü listesi kapanır */
+    position: absolute;  /* hamburger menü altına açılır */
+    top: calc(100% + 10px); /* calc, yüzde ile px toplamak için. amaç nav'ın altına açılsın */
+    right: 10px; 
+    flex-direction: column; /* dikey dizilim */
+    gap: 10px;              /* elemanlar arası boşluk */
+    padding: 12px;         /* iç boşluk */
+    border-radius: 16px; 
+    background: rgba(11, 11, 15, 0.95); /* yarı saydam arka plan */
+    border: 2.2px solid rgba(168,85,247,0.35);
+  }
+  #menuBtn{
+    display: block;  /* hamburger görünür */
+  }
+  #menuBtn[aria-expanded="true"] + ul{
+    display: flex;
+  }
+}
+
+
+
+/* Hakkımda - kart alanı */
+main{
+  padding: 40px 20px;
+  
+}
+
+/* iki kart yan yana, mobilde alt alta */
+main > div{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* kart */
+main details{
+  width: min(420px, 92vw); /* maksimum 420px, mobilde %92 genişlik */
+  border-radius: 18px;
+  overflow: hidden; /* köşeleri kırpar */
+  border: 2px solid #a855f7;
+  background: rgba(0,0,0,0.25);
+}
+
+/* summary default ok işaretini kaldır */
+main summary{
+  list-style: none; 
+  cursor: pointer;
+  position: relative;
+}
+main summary::-webkit-details-marker{
+  display: none; 
+}
+
+/* kapak foto */
+main summary img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover; 
+  filter: brightness(0.55); /* foto karartma */
+  display: block;  
+  transition: 200ms;
+}
+
+/* foto üstündeki yazı */
+main summary span{
+  position: absolute;
+  inset: 0; /* tüm kenarlardan 0 boşluk */
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 28px;
+  color: white;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+/* açılınca içerik */
+main details > div{
+  padding: 16px 18px 20px;
+  color: #eaeaf0;
+}
+
+/* küçük hover */
+main summary:hover img{
+  filter: brightness(0.45);
+}
+
+details ul > li { 
+  margin: 6px 0; 
+}
+
+details ul > li > ul { 
+  margin-top: 6px; 
+  margin-bottom: 10px; 
+}
+
+details ul > li strong { 
+  display: inline-block;
+  margin-top: 10px;
+}
+
+
+
+footer ul{
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    justify-content: center; /* ortala */
+    gap: 14px; /* elemanlar arası boşluk */
+}
+footer a{
+    text-decoration: none;
+    color: #a855f7;
+    
+}
+footer a:hover{
+    text-decoration: underline;
+}
+
+footer{
+  text-align: center;
+  opacity: 0.7;
+}
+
+body.light footer p{
+    color: #0b0b0f;
+}

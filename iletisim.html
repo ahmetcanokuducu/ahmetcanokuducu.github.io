@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACO | İletişim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="iletisimStyle.css">
+</head>
+<body>
+    <header>
+    <nav>
+        <a href="index.html">ACO</a>
+        <button id="menuBtn" type="button" aria-label="Menüyü aç/kapa" aria-expanded="false">☰</button>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="hakkimda.html">Hakkımda</a></li>
+            <li><a href="hobiler.html">Hobilerim</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+           
+
+        </ul>
+    </nav>
+    </header>
+
+<main class="contact">
+  <!-- Sayfa başlığı -->
+  <h1>İletişim</h1>
+
+  <form id="contactForm" action="https://formspree.io/f/xbdykgoa" method="POST" novalidate>
+  <!-- opsiyonel ama iyi: spam için -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <input id="name" name="name" type="text" placeholder="İsminiz" required>
+  <span id="errName"></span>
+
+  <input id="email" name="email" type="email" placeholder="E-posta adresiniz" required>
+  <span id="errEmail"></span>
+
+  <textarea id="message" name="message" rows="5" placeholder="Mesajınız" required></textarea>
+  <span id="errMsg"></span>
+
+  <button id="sendBtn" type="submit">Gönder</button>
+  <p id="formOk"></p>
+</form>
+
+</main>
+
+    <footer>
+        <p>&copy; 2025 Ahmet Can. Tüm hakları saklıdır.</p>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/ahmetcanokuducu" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/ahmetcanokuducu/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@acomliko" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+            <li><a href="https://github.com/ahmetcanokuducu" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://medium.com/@ahmetcanokuducu" target="_blank" rel="noopener noreferrer">Medium</a></li>
+        </ul>
+    </footer>
+    <script src="indexJs.js"></script>
+    <script src="iletisim.js"></script>
+
+</body>
+</html>
