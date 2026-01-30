@@ -99,7 +99,8 @@ nav > a{
 
 main{
   position: relative;   /* içindeki yazıyı üstüne bindirmek için */
-  margin: 10px;         /* kenarlardan boşluk */
+  margin-top: 30px;
+  margin-bottom: 30px;         
 }
 
 main img{
@@ -159,4 +160,5 @@ footer{
 body.light footer p{
     color: #0b0b0f;
 }
+
 
